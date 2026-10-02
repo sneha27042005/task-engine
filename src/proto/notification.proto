@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package notification;
+
+// Service definition
+service NotificationService {
+  rpc SendTaskNotification (NotificationRequest) returns (NotificationResponse);
+}
+
+// Input request structure
+message NotificationRequest {
+  string taskId = 1;
+  string title = 2;
+  string action = 3;
+}
+
+// Output response structure
+message NotificationResponse {
+  bool success = 1;
+  string message = 2;
+}
